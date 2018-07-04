@@ -1,0 +1,11 @@
+.bg-detail{
+    background-color: white;
+    height: 300px;
+}
+.my-hearder{
+  
+    background-color: #FFB6C1;
+    min-height: 300px;
+    width: 100%;
+    border-radius: 0px 0px 8px 8px;
+}

@@ -1,0 +1,117 @@
+<div>
+  <div>
+    <!--HeaderBar-->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light my-nav" #nav>
+      <div class="container">
+        <a class="navbar-brand" style="color: #000;" routerLink="">Product</a>
+        <button (click)="btntogglerClick()" class="navbar-toggler" id="as" style="border-color: rgb(0, 0, 0); border-width: 1px; "
+          type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" style="color: #000;" routerLink="/">หน้าแรก
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: #000;" routerLink="Card">
+                ตะกล้าสินค้า
+                <span class="badge badge-light">9</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link menue" style="color: #000;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                เกี่ยวกับเรา
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" style="color:black; cursor: pointer;" routerLink="HowToUse">วิธีสั่งซื้อสินค้า</a>
+                <a class="dropdown-item" style="color:black; cursor: pointer;" routerLink="Payment">แจ้งชำระเงิน </a>
+                <a class="dropdown-item" style="color:black; cursor: pointer;" routerLink="Contact">ติดต่อเรา </a>
+              </div>
+
+            </li>
+            <li class="nav-item dropdown" *ngIf="auth.authenticated">
+              <a class="nav-link " style="color: #000; cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                {{getName}}
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" style="color:black; cursor: pointer;" routerLink="ListOrder">รายการสั่งซื้อสินค้า</a>
+                <a class="dropdown-item" style="color:black; cursor: pointer;" (click)="this.auth.signOut()">ออกจากระบบ </a>
+              </div>
+
+            </li>
+            <li class="nav-item" *ngIf="!auth.authenticated">
+              <a class="nav-link" style="color: #000;" routerLink="Login">เข้าสู่ระบบ
+              </a>
+            </li>
+
+            <li class="nav-item" *ngIf="!auth.authenticated">
+              <a class="nav-link" style="color: #000;" routerLink="Resigter">สมัครสมาชิก
+              </a>
+            </li>
+
+          </ul>
+          <form class="form-inline my-2 my-lg-0" style="margin-left: 5px;">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn my-btn-search my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="my-container">
+    <!--Body-->
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="container-flud my-footter">
+    <!--Footter-->
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 " style="text-align: center;">
+          <div class="col-center">
+            <div class="col-foot-first">
+              ร้านดอกไม้โชติกา
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-foot col-foot-one">
+          <div class="col-foot-two">
+            <li>มาลัย</li>
+            <li>งานศพ</li>
+            <li>งานแต่ง</li>
+            <li>ช่อดอกไม้</li>
+            <li>กระเช้าดอกไม้</li>
+            <li>แจกันดอกไม้</li>
+          </div>
+
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-foot col-foot-one">
+
+          ที่ตั้งร้าน
+          <br> 2 ม.2 ต.บ้านกุ่ม อ.บางบาล จ.พระนครศรีอยุธยา 13250
+          <br>
+          <br> โทร: 0812672755
+          <br> Email: fiw.9897@gmail.com
+          <br>
+          <br> บัญชีธนาคาร
+          <br> เลขที่บัญชี 036-3-43303-0
+          <br> เลขที่บัญชี 036-3-43303-0
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+</div>

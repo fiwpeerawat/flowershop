@@ -1,0 +1,65 @@
+<div class="container" >
+
+  <div class="row-login-form">
+    <div class="col-form">
+      <div class="form-login">
+        <form [formGroup]='userForm'>
+          <div class="form-group " style=" margin: 0px;">
+            <label for="emailSignup" style="margin-bottom: 5px; font-size: 16px;">อีเมล</label>
+            <input #email type="email" (input)="onEmailChange($event.target.value)" style="border-radius: 0px;" autocomplete="off" formControlName='emailSignup'
+              class="form-control" id="emailSignup" aria-describedby="emailHelp" placeholder="กรุณาระบุอีเมล">
+            <span id="emailerror" #emailerror class="text-under-input">รูปแบบอีเมลไม่ถูกต้อง</span>
+          </div>
+          <div class="form-group" style=" margin: 0px;">
+            <label for="passwordSignup" style="margin-bottom: 5px; font-size: 16px;">รหัสผ่าน</label>
+            <input #pass type="password" (input)="onPasswortdChange()" style="border-radius: 0px;" formControlName='passwordSignup' class="form-control"
+              id="passwordSignup" placeholder="Password">
+            <span id="passwordSignuperror" #passwordSignuperror class="text-under-input">รหัสผ่านควรมีความยาวอยู่ระหว่าง 6-25 ตัวอักษร</span>
+          </div>
+          <div class="form-group" style=" margin: 0px;">
+            <label for="repasswordSignup" style="margin-bottom: 5px; font-size: 16px;">ระบุรหัสผ่านซ้ำ</label>
+            <input #repass type="password" (input)="onRePasswortdChange($event.target.value)" style="border-radius: 0px;" formControlName='repasswordSignup'
+              class="form-control" id="repasswordSignup" placeholder="กรุณณาระบุรหัสผ่านอีกครั้ง">
+            <span id="repasswordSignuperror" #repasswordSignuperror class="text-under-input">รหัสผ่านไม่ตรงกัน</span>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-login">
+      <div class="login-bt">
+        <div class="form-group ">
+          <label for="Name-Lastname" style="margin-bottom: 5px; font-size: 16px;">ชื่อ-นามสกุล</label>
+          <input type="text" #nameLastname (input)='onNameLastChange()' style="border-radius: 0px;" class="form-control" id="Name-Lastname"
+            placeholder="Name-Lastname">
+        </div>
+        <div>
+          <button class="myloginBt" (click)='signup()'>สมัครสมาชิก</button>
+        </div>
+        <div>
+          <button class="loginBtn loginBtn--facebook" (click)='facebookLogin()'>
+            Login with Facebook
+          </button>
+        </div>
+        <div>
+          <button class="loginBtn loginBtn--google" (click)='googleLogin()'>
+            Login with Google
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="id01" #modelerror (click)='error_click()' class="w3-modal" style="background-color: rgba(0, 0, 0, 0) ">
+    <div class=" my-model-content w3-modal-content">
+      <div class="w3-container" style="padding: 0px">
+        <button type="button" class="close" style="outline: none; margin-right:2px; ">&times;</button>
+        <div style="padding: 0 16px 0 16px;">
+          <img src="../../assets/img/icon-error.png" class="icon-error">
+          <p style="margin: 10px 0 0 30px; color: red">เกิดข้อผิดพลาด</p>
+          <p style="margin: 0 0 0 30px;">อีเมลนี้ได้ถูกใช้งานไปแล้ว</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

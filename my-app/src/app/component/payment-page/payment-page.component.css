@@ -1,0 +1,55 @@
+.my-contaner{
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    margin-top: 86px;
+    margin-bottom: 30px;
+}
+.my-form{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px 0 30px;
+}
+input,textarea,select{
+    border-radius: 2px; 
+}
+label::after{
+    content: "*";
+    color: red; 
+    margin-left: 3px;
+    
+}
+label{
+    font-size: 16px;
+    color: rgb(80, 80, 80);
+}
+.my-btn{
+    border-radius: 1px;
+     width: 130px;
+     font-size: 16px;
+}
+.my-btn{
+    margin-top: 10px;
+    border-radius: 2px;
+    width: 170px;
+    font-size: 16px;
+    background-color: rgb(255, 117, 138); 
+    box-shadow: 0 0 0 0;
+}
+.my-btn:hover{   
+    background-color: #FFB6C1;     
+}
+#file{
+    border-radius: 10px;
+}
+.title{
+    font-size: 22px;
+    color: rgb(80, 80, 80);
+    padding-bottom: 20px;
+    border-width: 1px;
+    border-color: rgb(219, 219, 219);
+    border-style:  none none solid;    
+    margin: 0 30px 0 30px;
+    
+}

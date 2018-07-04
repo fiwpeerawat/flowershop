@@ -1,0 +1,91 @@
+
+li.nav-item:hover{
+    background-color: rgb(211, 192, 206);   
+    border-radius: 5px;
+}
+.my-footter{
+    padding: 0px; 
+    background-color:  rgb(51, 51, 51);
+}
+.my-nav{
+   padding: .6em 1rem; 
+   background-color:   rgba(255, 182, 193, 0.2); 
+   transition: background-color 1s;
+ 
+}
+.my-btn-search{
+    color: rgb(66, 195, 255);
+    background-color: rgba(0, 0, 0, 0);
+    border-color:  rgb(66, 195, 255);
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0px 0px 0px 0px;
+    
+}
+.my-btn-search:hover{    
+    background-color: rgb(224, 224, 224);    
+}
+.col-foot{
+    padding: 25px;   
+    color: white;
+    max-height: 300px;
+    font-size: 14px;
+}
+.col-foot-first{
+    height: 240px;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: white;
+    font-size: 22px;
+}
+.col-center{
+    display: inline-block;
+    
+}
+.col-foot-two{
+    display: inline-block;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 460px){
+    .my-container {
+            padding-right:0px; 
+            padding-left:0px; 
+    }   
+}
+@media (max-width: 575px){
+   
+    .col-foot-one{
+        padding-top: 0px;
+    }
+    .col-foot-first {
+            height: 100px;
+          
+    }  
+    .col-foot-one{
+        text-align: center;
+    } 
+    
+
+}
+

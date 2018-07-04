@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="bg-detail-page">
+    <div class="container">
+      <div class="row row-page">
+        <div class="col" style="padding-top: 20px;">
+          <div class="col-img-main">
+            <img #imgmain class="img-main" src="https://static.giulianaflores.com.br/images/product/26099g.jpg">
+          </div>
+
+          <div class="row myrow-im-sm" >
+            <div class="col" (click)="nextImg()" style="padding: 0px; max-width: 32px;">
+              <img class="imB-N" src="../../assets/img/prev.png" >
+            </div>
+            <div class="col" style="padding: 0px;  ">
+              <div class="scrollmenu" #scrollmenu>
+                <div class="img-product-sm" (click)="changImg($event.target.src)">
+                  <div class="block-img">
+                    <img  src="https://s.isanook.com/hm/0/ud/0/4877/2.jpg" style="max-width: 76px; max-height: 76px; ">
+                  </div>                  
+                </div>
+                <div class="img-product-sm" (click)="changImg($event.target.src)">
+                  <div class="block-img">
+                    <img src="https://s.isanook.com/hm/0/ud/0/4877/2.jpg" style="max-width: 76px; max-height: 76px; ">
+                  </div>                  
+                </div>
+                <div class="img-product-sm" (click)="changImg($event.target.src)">
+                  <div class="block-img">
+                    <img src="https://s.isanook.com/hm/0/ud/0/4877/2.jpg" style="max-width: 76px; max-height: 76px; ">
+                  </div>                  
+                </div>
+                <div class="img-product-sm" (click)="changImg($event.target.src)">
+                  <div class="block-img">
+                    <img src="https://s.isanook.com/hm/0/ud/0/4877/2.jpg" style="max-width: 76px; max-height: 76px; ">
+                  </div>                  
+                </div>
+                
+              </div>
+            </div>
+            <div class="col" (click)="backImg()" style="padding: 0px; max-width: 32px;">
+              <img class="imB-N" src="../../assets/img/next.png">
+            </div>
+          </div>
+
+        </div>
+        <div class="col">
+          <div class="col-detail">
+            <div class="my-title">Title</div>
+            <div class="my-detail">Detailฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssฟฟฟฟฟฟฟฟ</div>
+            <div class="my-price">Price</div>
+            <button class="btn  my-btn">เพิ่มสินค้า</button>
+            
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div class="container-fluid" style="margin-bottom: 50px;">
+      <div class="title-group">
+        สินค้าจากกลุ่มเดียวกัน
+      </div>
+      <div class="row row-item ">
+        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col" style="padding: 0px;">
+          <app-product-show-item [urlImg]="'https://static.giulianaflores.com.br/images/product/26099g.jpg'"></app-product-show-item>
+        </div>
+        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col" style="padding: 0px;">
+          <app-product-show-item [urlImg]="'https://static.giulianaflores.com.br/images/product/26099g.jpg'"></app-product-show-item>
+        </div>
+        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col" style="padding: 0px;">
+          <app-product-show-item [urlImg]="'https://static.giulianaflores.com.br/images/product/26099g.jpg'"></app-product-show-item>
+        </div>
+        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col" style="padding: 0px;">
+          <app-product-show-item [urlImg]="'https://static.giulianaflores.com.br/images/product/26099g.jpg'"></app-product-show-item>
+        </div>
+        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col" style="padding: 0px;">
+          <app-product-show-item [urlImg]="'https://static.giulianaflores.com.br/images/product/26099g.jpg'"></app-product-show-item>
+        </div>
+        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col" style="padding: 0px;">
+          <app-product-show-item [urlImg]="'https://static.giulianaflores.com.br/images/product/26099g.jpg'"></app-product-show-item>
+        </div>
+      </div>
+    </div>
+</div>
+
+

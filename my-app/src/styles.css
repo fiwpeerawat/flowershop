@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+
+body { 
+    margin: 0;
+   
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+body{        
+    background-color:  rgb(239, 240, 245);
+   /* padding-top: 56px; */
+    font-family: 'Mitr', sans-serif;        
+}
+h1, h2, h3, h4, h5 {
+    font-family: 'Mitr', sans-serif; 
+}
+select:focus,
+select.form-control:focus,
+textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus {
+  box-shadow: 4px 4px 15px 0px #FFB6C1;
+  border-color: #FFB6C1;
+}
+

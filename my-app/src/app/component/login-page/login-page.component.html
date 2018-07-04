@@ -1,0 +1,72 @@
+<div class="container" >
+
+    <span *ngIf="this.title" class="row-login-form" style="padding: 10px 10px 0 20px; text-align: left; font-size: 22px">
+      {{title}}
+    </span>
+   <!-- <div *ngIf="!this.title" style="height: 30px;"></div>-->
+  
+  <div class="row-login-form" #rowlogin>
+    <div class="col-form">
+      <form [formGroup]='loginForm'>
+        <div class="form-login">
+          <div class="form-group " style="margin: 0px;">
+            <label for="email" style="font-size: 16px; margin-bottom: 5px; ">อีเมล</label>
+            <input type="email" (input)="onEmailChange($event.target.value)" autocomplete="off" formControlName="email" class="form-control"
+              id="email"  placeholder="กรุณาระบุอีเมล">
+            <span id="email" class="text-under-input">รูปแบบอีเมลไม่ถูกต้อง</span>
+          </div>
+          <div class="form-group" style="margin: 0px;">
+            <label for="password" style=" margin-bottom: 5px; font-size: 16px;">รหัสผ่าน</label>
+            <input type="password" (input)="onPassChange($event.target.value)" formControlName="password" class="form-control" id="password"
+              placeholder="กรุณาระบุรหัสผ่าน">
+            <span id="password" class="text-under-input">รหัสผ่านควรมีความยาวอยู่ระหว่าง 6-25 ตัวอักษร</span>
+          </div>
+        </div>
+      </form>
+      <div style="text-align: right; margin: 0px 5px 5px 5px;">
+        <a class="mylink" routerLink="../Resetpassword" data-dismiss="modal">ลืมรหัสผ่าน?</a>
+      </div>
+    </div>
+
+    <div class="col-login">
+      <div class="login-bt">
+        <div>
+          <button class="myloginBt" (click)='login()'>เข้าสู่ระบบ</button>
+        </div>
+        <div style="text-align: right; margin: 5px; font-size: 14px;">
+          สมาชิกใหม่?
+          <a class="mylink" routerLink="../Resigter" data-dismiss="modal">ลงทะเบียน</a> ที่นี่
+        </div>
+        <div>
+          <button class="loginBtn loginBtn--facebook" (click)='facebookLogin()'>
+            Login with Facebook
+          </button>
+        </div>
+        <div>
+          <button class="loginBtn loginBtn--google" (click)='googleLogin()'>
+            Login with Google
+          </button>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <div id="id01" #modelerror (click)='error_click()' class="w3-modal" style=" background-color: rgba(0, 0, 0, 0) ">
+    <div class=" my-model-content w3-modal-content">
+      <div class="w3-container" style="padding: 0px">
+        <button type="button" class="close" style="outline: none;  margin-right:2px;">&times;</button>
+        <div style="padding: 0 16px 0 16px;">
+          <img src="../../assets/img/icon-error.png" class="icon-error">
+          <p style="margin: 10px 0 0 30px; color: red">เกิดข้อผิดพลาด</p>
+          <p style="margin: 0 0 0 30px;">อีเมลหรือรหัสผ่านไม่ถูกต้อง</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

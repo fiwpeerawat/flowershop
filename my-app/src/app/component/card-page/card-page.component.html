@@ -1,0 +1,89 @@
+<div class="container">
+        <div class="bg-card">
+                <!--<div *ngIf="1==2" class="d-flex flex-row align-items-center justify-content-center myflex-container">
+                <button type="button" class="p-2 btn btn-outline-warning" routerLink="">ไม่มีสินค้าในตะกล้า</button>
+        </div>-->
+                <div class="myflex-container myflex-card">
+
+                        <div class="myflex-item">
+                                <div class="container-fluid " id="container-item-card">
+                                        <div class="row myCard-header">
+                                                <div class="col-8">
+                                                        สินค้า
+                                                </div>
+                                                <div class="col-2" style="padding:0px;">
+                                                        ราคา
+                                                </div>
+                                                <div class="col-2" style="padding-right:10px; padding-left:0px; text-align: right;">
+                                                        จำนวน
+                                                </div>
+                                        </div>
+                                        <app-card-page-item></app-card-page-item>
+                                        <app-card-page-item></app-card-page-item>
+                                        <app-card-page-item></app-card-page-item>
+
+
+                                </div>
+                        </div>
+                        <div class="myflex-price">
+                                <div class="container-fluid">
+                                        <div class="row myTitle-price">
+                                                สรุปรายการสั่งซื้อ
+                                        </div>
+                                        <div class="row myDetail-price">
+                                                <div class="col-8">
+                                                        รวมยอด (จำนวน 2 ขิ้น)
+                                                </div>
+                                                <div class="col-4" style="text-align: right;">
+                                                        ฿500
+                                                </div>
+                                        </div>
+                                        <div class="row myDetail-price">
+                                                <div class="col-8">
+                                                        ค่าจัดส่ง
+                                                </div>
+                                                <div class="col-4" style="text-align: right;">
+                                                        ฿20
+                                                </div>
+                                        </div>
+                                        <div class="row myDetail-price" style="color: rgb(0 , 0, 0);">
+                                                <div class="col-8">
+                                                        ยอดรวมทั้งสิ้น
+                                                </div>
+                                                <div class="col-4" style="text-align: right;">
+                                                        ฿520
+                                                </div>
+                                        </div>
+                                        <div class="row ">
+                                                <div class="col" style="margin-bottom:10px;">
+                                                        <button type="button" class="btn my-btn" style="font-size: 16px;" (click)="continueBill()" data-toggle="modal" data-target="#modal-login"
+                                                                style="width: 100%; font-size: 14px;">
+                                                                ดำเนินการชำระเงิน
+                                                        </button>
+
+                                                        <div *ngIf="!auth.authenticated" class="modal fade" id="modal-login" tabindex="1" role="dialog" aria-labelledby="modal-login"
+                                                                aria-hidden="true" style="width: 100%; border-radius: 1px;">
+
+                                                                <div class="modal-dialog modal-dialog-centered modal-lg my-modal-dialog" role="document">
+                                                                        <div class="modal-content" style="border-radius: 1px; padding-bottom: 30px;">
+                                                                                <button data-dismiss="modal" type="button" class="close" style="outline: none; text-align: right; margin:5px 10px 0 0;">
+                                                                                        &times;
+                                                                                </button>
+
+                                                                                <app-login-page [title]="'ยินดีต้อนรับ! กรุณาเข้าสู่ระบบเพื่อดำเนินการต่อ'"></app-login-page>
+                                                                        </div>
+
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+                                        </div>
+
+                                </div>
+                        </div>
+                </div>
+
+
+
+        </div>
+</div>

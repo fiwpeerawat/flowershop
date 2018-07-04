@@ -1,0 +1,169 @@
+<div class="container container-full">
+  <table class="table my-container">
+    <thead class="mythead">
+      <tr class="row-head">
+        <th scope="col" style="vertical-align: middle;">สินค้า</th>
+        <th scope="col" class="text-center" style="width: 80px; " style="vertical-align: middle;">
+          จำนวน
+        </th>
+        <th scope="col" class="text-center" style="width: 200px; " style="vertical-align: middle;">
+          ราคา
+        </th>
+        <th scope="col" class="text-center" style="width: 200px; " style="vertical-align: middle;">
+          ราคารวม
+        </th>
+      </tr>
+    </thead>
+    <tbody class="table-bordered">
+      <tr style="height: 100px;">
+        <th scope="row" style="vertical-align: middle;">
+          <div class="row">
+            <div class="col" style="max-width: 110px;">
+              <div class="myflex-card-img">
+                <img class="card-img" style="height:80px; width:80px;" src="https://static.giulianaflores.com.br/images/product/26099g.jpg">
+              </div>
+            </div>
+            <div class="col">
+              <div style="display: table; height: 80px;">
+                <div class="title-product">
+                  Title
+                  <span class="date-product"> (วันที่จัดส่งสินค้า : 14/05/18) </span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </th>
+        <td class="text-center" style="vertical-align: middle; width: 80px;">1</td>
+        <td class="text-center" style="vertical-align: middle; width: 200px;">$1000</td>
+        <td class="text-center" style="vertical-align: middle; width: 200px; color: red;">$1000</td>
+      </tr>
+      <tr style="height: 100px;">
+        <th scope="row" style="vertical-align: middle;">
+          <div class="row">
+            <div class="col" style="max-width: 110px;">
+              <div class="myflex-card-img">
+                <img class="card-img" style="height:80px; width:80px;" src="https://static.giulianaflores.com.br/images/product/26099g.jpg">
+              </div>
+            </div>
+            <div class="col">
+              <div style="display: table; height: 80px;">
+                <div class="title-product">
+                  Title
+                  <span class="date-product"> (วันที่จัดส่งสินค้า : 14/05/18) </span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </th>
+        <td class="text-center" style="vertical-align: middle; width: 80px;">1</td>
+        <td class="text-center" style="vertical-align: middle; width: 200px;">$1000</td>
+        <td class="text-center" style="vertical-align: middle; width: 200px;  color: red;">$2000</td>
+      </tr>
+      <tr style="height: 100px;">
+        <th scope="row" style="vertical-align: middle;">
+          <div class="row">
+            <div class="col" style="max-width: 110px;">
+              <div class="myflex-card-img">
+                <img class="card-img" style="height:80px; width:80px;" src="https://static.giulianaflores.com.br/images/product/26099g.jpg">
+              </div>
+            </div>
+            <div class="col">
+              <div style="display: table; height: 80px;">
+                <div class="title-product">
+                  Title
+                  <span class="date-product"> (วันที่จัดส่งสินค้า : 14/05/18) </span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </th>
+        <td class="text-center" style="vertical-align: middle; width: 80px;">1</td>
+        <td class="text-center" style="vertical-align: middle; width: 200px;">$1000</td>
+        <td class="text-center" style="vertical-align: middle; width: 200px;  color: red;">$3000</td>
+      </tr>
+
+      <tr style="height: 60px;  ">
+        <td colspan="3" style="vertical-align: middle; text-align: right;">ค่าส่งสินค้า</td>
+        <td class="text-center" style="vertical-align: middle; width: 200px;  color: red;">$0</td>
+      </tr>
+      <tr style="height: 60px;  ">
+        <td colspan="3" style="vertical-align: middle; text-align: right;">ราคารวม</td>
+        <td class="text-center" style="vertical-align: middle; width: 200px;  color: red;">$3000</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+  <div class="container" style="margin-top: 20px; margin-bottom: 20px;">
+    <div class="row ">
+      <div class="col-xl-4 col-lg-4 col-md-3 col-sm-1">
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-3 col-sm-1">
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-input">
+        <div class="form-group ">
+          <label for="date">วันที่ต้องการรับสินค้า</label>
+          <input class="form-control" id="date" type="date" #datesent value="2018-08-08" id="date">
+        </div>
+        <div class="form-group ">
+          <label for="comment">สถานที่รับสินค้า</label>
+          <textarea #address class="form-control" rows="2" id="comment">2 ม.2 ต.บ้านกุ่ม อ.บางบาล จ.อยุธยา 13250</textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container" style="margin-top: 50px; margin-bottom: 100px;">
+    <div class="row row-confirm">
+      <label class="container-ckeck">
+        <span class="text-confirm1" id="textconfirm">ยืนยันการสั่งซื้อสินค้า</span>
+        <input type="checkbox" (change)="clickCheck($event.target.checked )">
+        <span class="checkmark" style="margin-top: 4px;"></span>
+
+      </label>
+    </div>
+    <div class="row">
+      <div class="col" style="text-align: right;">
+        <button type="button" class="btn  mybtn-success" (click)="clickconfirm()">ยืนยันการชำระเงิน</button>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="Modalconfirm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">คุณมั่นใจที่จะซื้อสินค้ากับเราไช่หรือไม่?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div>
+              ราคา : <span style="color: red">3,000 บาท</span> 
+            </div>
+            <div>
+              วันที่จัดส่งสินค้า : <span style="color: red">{{datesent.value}}</span> 
+            </div>
+            <div>
+              สถานที่ : <span style="color: red">{{address.value}}</span> 
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+            <button type="button" class="btn btn-success" data-dismiss="modal" (click)=confirm()> ยืนยันการซื้อสินค้า </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>
