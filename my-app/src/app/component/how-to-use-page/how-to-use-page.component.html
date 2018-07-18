@@ -22,8 +22,11 @@
     <div class="title-page" style="padding-top: 30px;  border-style:none">
       ขั้นตอนที่ 2 ชำระผ่านบัญชีธนาคาร
     </div>
-    <div class="row">
-      <img class="img-bank" src="https://store-2t0b6.mybigcommerce.com/product_images/uploaded_images/order-byphone-th.jpg">
+    <div class="row" style="margin-top: 10px;">
+      <div style="width: 100%; text-align: center;">
+        <img (click)='onClickImg($event.target.src)' src="https://angsila.cs.buu.ac.th/~57660113/webAPI/imgProject/bank.png" class="img-fluid"
+          alt="Responsive image">
+      </div>
     </div>
     <div class="title-page" style="padding-top: 30px;  border-style:none">
       เลือกบัญชีที่ท่านสะดวกโอนเงินชำระค่าสินค้า ชื่อบัญชี
@@ -31,10 +34,10 @@
     </div>
     <div class="list-howto">
       <li>
-        ธนาคารกสิกรไทย สาขาเซ็นทรัล พระราม 3 บัญชีออมทรัพย์ เลขที่บัญชี 036-3-43303-0
+        ธนาคารกสิกรไทย สาขาโลตัส อยุธยา บัญชีออมทรัพย์ เลขที่บัญชี 043-1-65828-3
       </li>
       <li>
-        ธนาคารกสิกรไทย สาขาเซ็นทรัล พระราม 3 บัญชีออมทรัพย์ เลขที่บัญชี 036-3-43303-0
+        ธนาคารออมสิน  สาขาเจ้าพรหม บัญชีออมทรัพย์ เลขที่บัญชี 020-0-5598760-4
       </li>
     </div>
 
@@ -60,14 +63,17 @@
       ขั้นตอนที่ 1 เลือกสินค้าที่ต้องการ
     </div>
     <div style="margin: 30px;">
-      <img src="../../../assets/img/howto-img-add.png" style="width: 100%;">
+      <img src="https://angsila.cs.buu.ac.th/~57660113/webAPI/imgProject/1.png" (click)='onClickImg($event.target.src)' class="img-fluid"
+        alt="Responsive image">
     </div>
 
     <div class="title-page" style="padding-top: 30px;  border-style:none">
-      ขั้นตอนที่ 2 กดที่ปุ่มชำระสินค้าเพื่อดำเนินการชำระเงิน
+      ขั้นตอนที่ 2 กดที่ปุ่มตะกล้าสินค้าเพื่อตรวจสอบรายการสินค้า
     </div>
     <div style="text-align: center; margin: 30px;">
-      <img src="../../../assets/img/howto-img-card.png" class="howto-img-card">
+      <img src="https://angsila.cs.buu.ac.th/~57660113/webAPI/imgProject/2.png" (click)='onClickImg($event.target.src)' class="img-fluid"
+        alt="Responsive image">
+
     </div>
 
     <div class="title-page" style="padding-top: 30px;  border-style:none">
@@ -85,7 +91,9 @@
       </li>
     </div>
     <div style="text-align: center; margin: 30px;">
-      <img src="../../../assets/img/howto-img-card-item.png" style="width: 100%;">
+      <img src="https://angsila.cs.buu.ac.th/~57660113/webAPI/imgProject/3.png" (click)='onClickImg($event.target.src)' class="img-fluid"
+        alt="Responsive image">
+
     </div>
 
     <div class="title-page" style="padding-top: 30px;  border-style:none">
@@ -101,7 +109,9 @@
 
     </div>
     <div style="margin: 30px;">
-      <img src="../../../assets/img/howto-bill.png" style="width: 100%;">
+      <img src="https://angsila.cs.buu.ac.th/~57660113/webAPI/imgProject/4.png" (click)='onClickImg($event.target.src)' class="img-fluid"
+        alt="Responsive image">
+
     </div>
 
     <div class="title-page" style="padding-top: 30px;  border-style:none">
@@ -117,14 +127,17 @@
 
     </div>
     <div style="margin: 30px;">
-      <img src="../../../assets/img/howto-list-order.png" style="width: 100%;">
+      <img src="https://angsila.cs.buu.ac.th/~57660113/webAPI/imgProject/5.png" (click)='onClickImg($event.target.src)' class="img-fluid"
+        alt="Responsive image">
+
     </div>
 
     <div class="title-page" style="padding-top: 30px;  border-style:none">
       ขั้นตอนที่ 6 ชำระผ่านบัญชีธนาคาร
     </div>
-    <div class="row">
-      <img class="img-bank" src="https://store-2t0b6.mybigcommerce.com/product_images/uploaded_images/order-byphone-th.jpg">
+    <div style="text-align: center; margin-top: 10px;">
+      <img (click)='onClickImg($event.target.src)' src="https://angsila.cs.buu.ac.th/~57660113/webAPI/imgProject/bank.png" class="img-fluid"
+        alt="Responsive image">
     </div>
     <div class="title-page" style="padding-top: 30px;  border-style:none">
       เลือกบัญชีที่ท่านสะดวกโอนเงินชำระค่าสินค้า ชื่อบัญชี
@@ -132,10 +145,10 @@
     </div>
     <div class="list-howto">
       <li>
-        ธนาคารกสิกรไทย สาขาเซ็นทรัล พระราม 3 บัญชีออมทรัพย์ เลขที่บัญชี 036-3-43303-0
+        ธนาคารกสิกรไทย สาขาโลตัส อยุธยา บัญชีออมทรัพย์ เลขที่บัญชี 043-1-65828-3
       </li>
       <li>
-        ธนาคารกสิกรไทย สาขาเซ็นทรัล พระราม 3 บัญชีออมทรัพย์ เลขที่บัญชี 036-3-43303-0
+        ธนาคารออมสิน  สาขาเจ้าพรหม บัญชีออมทรัพย์ เลขที่บัญชี 020-0-5598760-4
       </li>
     </div>
 
@@ -143,8 +156,11 @@
       ขั้นตอนที่ 7 แจ้งการชำระเงิน
     </div>
 
-    <div class="row">
-      <img class="img-payment" src="../../../assets/img/howto-payment.png">
+
+    <div style="text-align:  center;">
+      <img src="https://angsila.cs.buu.ac.th/~57660113/webAPI/imgProject/6.png" (click)='onClickImg($event.target.src)' class="img-fluid"
+        alt="Responsive image">
+
     </div>
 
     <div class="list-howto">
@@ -171,4 +187,12 @@
 
     </div>
   </div>
+
+  <div #modelImg class="w3-modal" onclick="this.style.display='none'" style="padding-top: 100px;">
+    <div class="w3-modal-content w3-animate-zoom">
+      <img #Imgshow style="width:100%">
+    </div>
+  </div>
+
+
 </div>

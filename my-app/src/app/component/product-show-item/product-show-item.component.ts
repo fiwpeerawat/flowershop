@@ -7,10 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProductShowItemComponent implements OnInit {
 
+  @Input() obj:any;
   @Input() urlImg:String;
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

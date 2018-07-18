@@ -22,7 +22,9 @@ export class ResigterPageComponent implements OnInit {
   @ViewChild("repasswordSignuperror") repasswordEr: ElementRef;
   @ViewChild("nameLastname") nameLastname: ElementRef;
   @ViewChild("modelerror") modelerror: ElementRef;
-
+  @ViewChild("loginText", {read: ElementRef}) loginText: ElementRef;
+  @ViewChild("loander", {read: ElementRef}) loander: ElementRef;
+  @ViewChild("btnLogin", {read: ElementRef}) btnLogin: ElementRef;
 
   constructor(public fb: FormBuilder, public auth: AuthService) {
     auth.getCurrentLoggedIn();
@@ -111,9 +113,15 @@ export class ResigterPageComponent implements OnInit {
       this.userForm.get('repasswordSignup').status == 'VALID' &&
       this.userForm.value.passwordSignup == this.userForm.value.repasswordSignup &&
       this.validator.length > 0) {
+        this.loginText.nativeElement.style.display = "none";
+        this.loander.nativeElement.style.display = "block";
+        this.btnLogin.nativeElement.disabled = true;
       this.auth.emailSignUp(this.userForm.value.emailSignup, this.userForm.value.passwordSignup, this.validator)
         .then((i) => {
           if (i)   
+            this.btnLogin.nativeElement.disabled = false;
+            this.loginText.nativeElement.style.display = "block";
+            this.loander.nativeElement.style.display = "none";
             this.modelerror.nativeElement.style.display = "block"
         })
     }

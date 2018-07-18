@@ -1,53 +1,64 @@
-<div class="container" >
+<div class="container">
   <div class="my-contaner">
     <div class="title">
       แจ้งการชำระเงิน
     </div>
     <div class="my-form">
-      <form>
-        <div class="form-group ">
-          <label for="odernumber">หมายเลขคำสั่งซื้อ</label>
-          <input type="text" class="form-control" id="odernumber" autocomplete="off" placeholder="ใส่หมายเลขคำสั่งซื้อ">
-        </div>
-        <div class="form-group ">
-          <label for="tellnumber">เบอร์โทรศัพท์</label>
-          <input type="text" class="form-control" id="tellnumber" autocomplete="off" placeholder="ใส่เบอร์โทรศัพท์">
-        </div>
-        <div class="form-group ">
-          <label for="banknumber">ธนาคารที่ชำระเงิน</label>
-          <select class="form-control">
-            <option>Default select</option>
-            <option>Default select</option>
-            <option>Default select</option>
-          </select>
-        </div>
-        <div class="form-group ">
-          <label for="price">จำนวนเงิน</label>
-          <input type="text" class="form-control" id="price" autocomplete="off" placeholder="xxx,xxx">
-        </div>
-        <div class="form-group ">
-          <label for="date">วันที่โอนเงิน</label>
-          <input class="form-control" id="date" type="date" value="2011-08-19" id="date">
-        </div>
-        <div class="form-group ">
-          <label for="time">เวลาโอนเงินโดยประมาณ</label>
-          <input class="form-control" for="time" type="time" value="13:45:00" id="example-time-input">
-        </div>
-        <div class="form-group ">
-          <label for="file">แนบรูปภาพ หรือ หลักฐานการโอนเงิน</label>
-          <input type="file" class="form-control-file" id="file">
-        </div>
-        <div class="form-group ">
-          <label for="comment">หมายเหตุ</label>
-          <textarea class="form-control" rows="5" id="comment"></textarea>
-        </div>
-        <button type="button" class="btn my-btn">แจ้งชำระเงิน</button>
-       
 
-      </form>
-
+      <div class="form-group ">
+        <label for="odernumber">หมายเลขคำสั่งซื้อ</label>
+        <input type="text" class="form-control" id="odernumber" autocomplete="off" #input1 (input)="inputOrder($event.target.value)"
+          placeholder="ใส่หมายเลขคำสั่งซื้อ">
+      </div>
+      <div class="form-group ">
+        <label for="tellnumber">เบอร์โทรศัพท์</label>
+        <input type="text" class="form-control" id="tellnumber" autocomplete="off" #input2 (input)="inputTel($event.target.value)"
+          placeholder="ใส่เบอร์โทรศัพท์">
+      </div>
+      <div class="form-group ">
+        <label for="banknumber">ธนาคารที่ชำระเงิน</label>
+        <select class="form-control" #input3 (input)="inputBank($event.target.value)">
+          <option>-</option>
+          <option>Default select</option>
+          <option>Default select</option>
+          <option>Default select</option>
+        </select>
+      </div>
+      <div class="form-group ">
+        <label for="price">จำนวนเงิน</label>
+        <input type="text" class="form-control" id="price" autocomplete="off" placeholder="xxx,xxx" #input4 (input)="inputPrice($event.target.value)">
+      </div>
+      <div class="form-group ">
+        <label for="date">วันที่โอนเงิน</label>
+        <input class="form-control" id="date" type="date" value="2018-08-19" id="date" #input5 (input)="inputDate($event.target.value)">
+      </div>
+      <div class="form-group ">
+        <label for="time">เวลาโอนเงินโดยประมาณ</label>
+        <input class="form-control" for="time" type="time" value="13:45:00" id="example-time-input" #input6 (input)="inputTime($event.target.value)">
+      </div>
+      <div class="form-group ">
+        <label for="file">แนบรูปภาพ หรือ หลักฐานการโอนเงิน</label>
+        <input type="file" class="form-control-file" id="file" #input7 (change)="fileSelected($event.target.files[0])">
+      </div>
+      <div class="form-group ">
+        <label for="comment">หมายเหตุ</label>
+        <textarea class="form-control" rows="5" id="comment" (input)="inputNote($event.target.value)"></textarea>
+      </div>
+      <button type="button" class="btn my-btn" #btnPayment (click)="confirmClick()">แจ้งชำระเงิน</button>
     </div>
   </div>
+
+
+  <div class="w3-container" >     
+        
+      <div #loader class="w3-modal" style=" background-color: rgba(0, 0, 0, 0) ">
+        <div class="w3-modal-content my-model" >
+          <div class="w3-container my-model-content" style="padding: 0px">           
+              <div class="loader"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 </div>

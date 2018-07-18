@@ -107,6 +107,7 @@
     width: 100%;
     border-radius: 2px;
     outline: none;
+    height: 44px;
   }
   .myloginBt:hover{
     background-color: #FFB6C1;

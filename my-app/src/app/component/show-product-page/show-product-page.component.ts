@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { GetAllproductInGroupService } from "../../services/get-allproduct-in-group.service"
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-show-product-page',
@@ -7,11 +9,29 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ShowProductPageComponent implements OnInit {
 
-  @Input() nameGroup:String;
+  public idGroup:string;
+  public nameGroup:string;
+  public productList:Product[];
 
-  constructor() { }
+  constructor(public getAllpro:GetAllproductInGroupService, public router : ActivatedRoute) { }
 
   ngOnInit() {
+
+      this.idGroup = this.router.snapshot.paramMap.get('GID');
+      this.nameGroup = this.router.snapshot.paramMap.get('GROUPNAME');      
+      var form = new FormData();
+      form.append('GID',this.idGroup);
+      this.getAllpro.getProduct(form).subscribe( (response) => {
+        this.productList = response;
+      } )
   }
 
+}
+
+interface Product{
+  PID : number;
+  NAME :string;
+  DETAIL :string;
+  PRICE :number;
+  URL :string;
 }

@@ -1,9 +1,28 @@
 <div class="container">
         <div class="bg-card">
-                <!--<div *ngIf="1==2" class="d-flex flex-row align-items-center justify-content-center myflex-container">
-                <button type="button" class="p-2 btn btn-outline-warning" routerLink="">ไม่มีสินค้าในตะกล้า</button>
-        </div>-->
-                <div class="myflex-container myflex-card">
+                <div class="d-flex flex-row align-items-center justify-content-center ">
+                        <div class="myflex-container-2" #elNoPro  >
+                                <button type="button" class="p-2 btn btn-outline-warning" style="display: none;" routerLink="/" #noCardinpro>ไม่มีสินค้าในตะกล้า</button>
+                                <div class="lds-css ng-scope" style="width: 44px; margin-left: auto; margin-right: auto; " #loander>
+                                        <div class="lds-spinner">
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                        </div>
+                                </div>
+                        </div>
+
+                </div>
+                <div *ngIf="product.length > 0" class="myflex-container myflex-card">
 
                         <div class="myflex-item">
                                 <div class="container-fluid " id="container-item-card">
@@ -18,9 +37,10 @@
                                                         จำนวน
                                                 </div>
                                         </div>
-                                        <app-card-page-item></app-card-page-item>
-                                        <app-card-page-item></app-card-page-item>
-                                        <app-card-page-item></app-card-page-item>
+                                        <app-card-page-item *ngFor="let item of product; let i = index" [product]="item" [index]="i" (outputindex)="removeProduct($event)"
+                                                (outputchecked)="checkClick($event)">
+                                        </app-card-page-item>
+
 
 
                                 </div>
@@ -32,10 +52,10 @@
                                         </div>
                                         <div class="row myDetail-price">
                                                 <div class="col-8">
-                                                        รวมยอด (จำนวน 2 ขิ้น)
+                                                        รวมยอด (จำนวน {{product.length}} ขิ้น)
                                                 </div>
                                                 <div class="col-4" style="text-align: right;">
-                                                        ฿500
+                                                        {{sumPrice}}
                                                 </div>
                                         </div>
                                         <div class="row myDetail-price">
@@ -43,7 +63,7 @@
                                                         ค่าจัดส่ง
                                                 </div>
                                                 <div class="col-4" style="text-align: right;">
-                                                        ฿20
+                                                        ฿0
                                                 </div>
                                         </div>
                                         <div class="row myDetail-price" style="color: rgb(0 , 0, 0);">
@@ -51,7 +71,7 @@
                                                         ยอดรวมทั้งสิ้น
                                                 </div>
                                                 <div class="col-4" style="text-align: right;">
-                                                        ฿520
+                                                        {{sumPrice}}
                                                 </div>
                                         </div>
                                         <div class="row ">
@@ -60,6 +80,7 @@
                                                                 style="width: 100%; font-size: 14px;">
                                                                 ดำเนินการชำระเงิน
                                                         </button>
+
 
                                                         <div *ngIf="!auth.authenticated" class="modal fade" id="modal-login" tabindex="1" role="dialog" aria-labelledby="modal-login"
                                                                 aria-hidden="true" style="width: 100%; border-radius: 1px;">

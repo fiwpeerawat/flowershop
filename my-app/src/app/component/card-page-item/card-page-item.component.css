@@ -140,6 +140,11 @@
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+.my-card-img{
+    cursor: pointer;
+    outline: none;
+}
+
 
 @media (max-width: 599px){
     .myPrice-number{

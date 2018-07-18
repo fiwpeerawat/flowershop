@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="bg-page ">
+  
+      <div class="row row-item" style="padding-left: 5px; margin-bottom: 10px;">
+        <span class="title-grop">  พบคำที่ค้นหา {{search.getProductList.length}} รายการ</span>
+  
+      </div>
+  
+      <div class="row row-item">
+        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col" style="padding: 0px;" *ngFor="let product of search.getProductList">
+          <app-product-show-item  [obj]="product"   ></app-product-show-item>
+        </div>      
+      </div>
+    </div>
+  </div>

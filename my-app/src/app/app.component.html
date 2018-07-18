@@ -3,7 +3,9 @@
     <!--HeaderBar-->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light my-nav" #nav>
       <div class="container">
-        <a class="navbar-brand" style="color: #000;" routerLink="">Product</a>
+        <a class="navbar-brand" style="color: #000;" routerLink="">
+          <img src="../assets/img/logo-shop.png" height="37"> 
+        </a>
         <button (click)="btntogglerClick()" class="navbar-toggler" id="as" style="border-color: rgb(0, 0, 0); border-width: 1px; "
           type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
           aria-expanded="false" aria-label="Toggle navigation">
@@ -12,18 +14,18 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+            <li class="nav-item">              
               <a class="nav-link" style="color: #000;" routerLink="/">หน้าแรก
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" style="color: #000;" routerLink="Card">
                 ตะกล้าสินค้า
-                <span class="badge badge-light">9</span>
+                <!--<span class="badge badge-danger" style="border-radius: 50%;"> {{productIncarde.getcountProduct}} </span>-->
               </a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link menue" style="color: #000;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+              <a class="nav-link menue"  style="color: #000; cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
                 เกี่ยวกับเรา
               </a>
@@ -57,8 +59,8 @@
 
           </ul>
           <form class="form-inline my-2 my-lg-0" style="margin-left: 5px;">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn my-btn-search my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-control mr-sm-2 input-search" type="search"  placeholder="ค้นหาสินค้า" aria-label="Search" #searchInput>
+            <button class="btn my-btn-search my-2 my-sm-0" type="submit" (click)="searchClick()"  >ค้นหา</button>
           </form>
         </div>
       </div>
@@ -102,8 +104,8 @@
           <br> Email: fiw.9897@gmail.com
           <br>
           <br> บัญชีธนาคาร
-          <br> เลขที่บัญชี 036-3-43303-0
-          <br> เลขที่บัญชี 036-3-43303-0
+          <br> เลขที่บัญชี 043-1-65828-3
+          <br> เลขที่บัญชี 020-0-5598760-4
 
 
         </div>

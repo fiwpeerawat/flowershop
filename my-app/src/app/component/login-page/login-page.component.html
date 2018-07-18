@@ -1,10 +1,10 @@
-<div class="container" >
+<div class="container">
 
-    <span *ngIf="this.title" class="row-login-form" style="padding: 10px 10px 0 20px; text-align: left; font-size: 22px">
-      {{title}}
-    </span>
-   <!-- <div *ngIf="!this.title" style="height: 30px;"></div>-->
-  
+  <span *ngIf="this.title" class="row-login-form" style="padding: 10px 10px 0 20px; text-align: left; font-size: 22px">
+    {{title}}
+  </span>
+  <!-- <div *ngIf="!this.title" style="height: 30px;"></div>-->
+
   <div class="row-login-form" #rowlogin>
     <div class="col-form">
       <form [formGroup]='loginForm'>
@@ -12,7 +12,7 @@
           <div class="form-group " style="margin: 0px;">
             <label for="email" style="font-size: 16px; margin-bottom: 5px; ">อีเมล</label>
             <input type="email" (input)="onEmailChange($event.target.value)" autocomplete="off" formControlName="email" class="form-control"
-              id="email"  placeholder="กรุณาระบุอีเมล">
+              id="email" placeholder="กรุณาระบุอีเมล">
             <span id="email" class="text-under-input">รูปแบบอีเมลไม่ถูกต้อง</span>
           </div>
           <div class="form-group" style="margin: 0px;">
@@ -31,7 +31,26 @@
     <div class="col-login">
       <div class="login-bt">
         <div>
-          <button class="myloginBt" (click)='login()'>เข้าสู่ระบบ</button>
+          <button class="myloginBt" (click)='login()' style="padding: 0px;" #btnLogin>
+            <span  #loginText >เข้าสู่ระบบ</span>
+            <div class="lds-css ng-scope" style="width: 44px; margin-left: auto; margin-right: auto; display: none;" #loander>
+              <div class="lds-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+
+          </button>
         </div>
         <div style="text-align: right; margin: 5px; font-size: 14px;">
           สมาชิกใหม่?
@@ -47,10 +66,7 @@
             Login with Google
           </button>
         </div>
-
       </div>
-
-
     </div>
   </div>
 
@@ -66,6 +82,11 @@
       </div>
     </div>
   </div>
+
+
+
+
+
 
 
 

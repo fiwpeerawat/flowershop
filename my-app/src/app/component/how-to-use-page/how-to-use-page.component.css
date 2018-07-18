@@ -93,3 +93,11 @@
           width: 200px;
       }
 }
+@media (max-width: 360px){
+    .img-bank{       
+        width: 230px; 
+        height: calc(100% * (50/280));
+      }
+   
+     
+}

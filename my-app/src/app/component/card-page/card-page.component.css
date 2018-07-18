@@ -14,8 +14,12 @@
     background-color: #FFB6C1; 
 }
 .myflex-container{
+    min-height: 300px; 
+
+}
+.myflex-container-2{
     min-height: 300px;
-  
+    padding-top: 132px;
 }
 .myflex-card{
     display: flex; 

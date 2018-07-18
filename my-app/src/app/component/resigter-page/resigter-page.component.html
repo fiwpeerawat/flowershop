@@ -33,7 +33,26 @@
             placeholder="Name-Lastname">
         </div>
         <div>
-          <button class="myloginBt" (click)='signup()'>สมัครสมาชิก</button>
+          <button class="myloginBt" (click)='signup()' style="padding: 0px;"  #btnLogin>
+            <span  #loginText >สมัครสมาชิก</span>
+            <div class="lds-css ng-scope" style="width: 44px; margin-left: auto; margin-right: auto; display: none;" #loander>
+              <div class="lds-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+
+          </button>
         </div>
         <div>
           <button class="loginBtn loginBtn--facebook" (click)='facebookLogin()'>

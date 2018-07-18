@@ -15,7 +15,6 @@ import {ShowProductPageComponent} from './component/show-product-page/show-produ
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { LoginPageComponent } from './component/login-page/login-page.component';
 import { ResigterPageComponent } from './component/resigter-page/resigter-page.component';
-import { HttpModule } from '@angular/http';
 import { ResetpasswordPageComponent } from './component/resetpassword-page/resetpassword-page.component';
 import { ListOrderPageComponent } from './component/list-order-page/list-order-page.component';
 import { HowToUsePageComponent } from './component/how-to-use-page/how-to-use-page.component';
@@ -23,6 +22,10 @@ import { BillOrderPageComponent } from './component/bill-order-page/bill-order-p
 import { PaymentPageComponent } from './component/payment-page/payment-page.component';
 import { ContactPageComponent } from './component/contact-page/contact-page.component';
 import { PrebootModule } from 'preboot';
+import { HttpModule , Http } from '@angular/http';
+import { ViewAfterPaymentComponent } from './component/view-after-payment/view-after-payment.component';
+import { SearchProductComponent } from './component/search-product/search-product.component';
+
 // Firebase
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -31,8 +34,17 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 // Service
 import { AuthService } from './services/auth.service';
+import { GetProductHomepageService } from "./services/get-product-homepage.service";
+import { GetAllproductInGroupService } from "./services/get-allproduct-in-group.service"
+import { GetProductDetailService } from "./services/get-product-detail.service"
+import { ProductIncardNoAuthService } from "./services/product-incard-no-auth.service"
+import { BillConfirmService } from "./services/bill-confirm.service"
+import { AfterPaymentService } from './services/after-payment.service';
+import { SearchService } from './services/search.service';
 // Guard
 import { AuthGuard } from './guards/auth.guard';
+
+
 
 
 
@@ -65,6 +77,9 @@ const appRoutes: Routes = [
   { path: "BillOrder", component: BillOrderPageComponent,canActivate: [AuthGuard] },
   { path: "Payment", component: PaymentPageComponent },
   { path: "Contact", component: ContactPageComponent },
+  { path: "AfterPayment", component: ViewAfterPaymentComponent ,canActivate: [AuthGuard] },
+  { path: "Search", component: SearchProductComponent },
+  
  
 //, canActivate: [AuthGuard] 
 ]
@@ -87,6 +102,8 @@ const appRoutes: Routes = [
     BillOrderPageComponent,
     PaymentPageComponent,
     ContactPageComponent,
+    ViewAfterPaymentComponent,
+    SearchProductComponent,
 
 
 
@@ -110,7 +127,18 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     PrebootModule.withConfig({ appRoot: 'app-root' })
   ],
-  providers: [AuthService, AngularFireDatabase, AuthGuard],
+  providers: [
+    AuthService, 
+    AngularFireDatabase,
+    AuthGuard,
+    GetProductHomepageService,
+    GetAllproductInGroupService,
+    GetProductDetailService,
+    ProductIncardNoAuthService,
+    BillConfirmService,
+    AfterPaymentService,
+    SearchService,
+  ],    
   bootstrap: [AppComponent]
 })
 export class AppModule { }

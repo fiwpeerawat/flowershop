@@ -24,19 +24,7 @@ label{
     font-size: 16px;
     color: rgb(80, 80, 80);
 }
-.my-btn{
-    border-radius: 1px;
-     width: 130px;
-     font-size: 16px;
-}
-.my-btn{
-    margin-top: 10px;
-    border-radius: 2px;
-    width: 170px;
-    font-size: 16px;
-    background-color: rgb(255, 117, 138); 
-    box-shadow: 0 0 0 0;
-}
+
 .my-btn:hover{   
     background-color: #FFB6C1;     
 }
@@ -56,25 +44,10 @@ label{
     margin: 0 30px 0 30px;
     
 }
-.not-have-input{
-    border-style: solid;
-    border-width: 1px;
-    border-color: red;  
+.my-text-view{
+    height: 115px;
+    word-wrap: break-word;
+    overflow: scroll;
 }
-.my-model{
-    width: 50px;
-    height: 50px;
-    background-color: rgba(0, 0, 0,0);
-}
-@media (max-width: 768px){
-    .w3-modal {
-        padding-top: 100px;
-    }
-}
-@media (max-width: 600px){
-    .my-model-content{
-      margin:  auto auto;
-      width: 50px!important;
-    }
-  }
+
 

@@ -109,7 +109,7 @@
     width: 100%;
     border-radius: 2px;  
     outline: none;
-    
+    height: 45px;
   }
   .myloginBt:hover{
     background-color: #FFB6C1;
@@ -146,7 +146,7 @@
     -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
     animation-name: example;
     animation-duration: 1s;
-}
+ }
 .icon-error{
   width: 20px;
   height: 20px;

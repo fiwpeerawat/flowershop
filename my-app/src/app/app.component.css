@@ -48,23 +48,20 @@ li.nav-item:hover{
     display: inline-block;
     text-align: left;
 }
+.input-search{
+    background-color: rgb(238, 231, 236);    
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media (min-width: 992px){
+    .input-search{
+       width: 100px; 
+       transition: width 1s;
+    }  
+    .input-search:focus{
+        width: 223.5px;
+    }
+}
 
 
 @media (max-width: 460px){

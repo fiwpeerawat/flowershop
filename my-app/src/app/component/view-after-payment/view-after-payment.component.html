@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="my-contaner">
+    <div class="title">
+      รายละเอียดการแจ้งชำระเงิน
+    </div>
+    <div class="my-form" *ngFor="let item of payment_order " >
+
+      <div class="form-group ">
+        <label for="odernumber">หมายเลขคำสั่งซื้อ</label>
+        <div id="odernumber" class="form-control">
+          {{item.Ordernumber}}
+        </div>
+      </div>
+      <div class="form-group ">
+        <label for="tellnumber">เบอร์โทรศัพท์</label>
+        <div id="tellnumber" class="form-control">
+            {{item.TEL}}
+        </div>
+      </div>
+      <div class="form-group ">
+        <label for="banknumber">ธนาคารที่ชำระเงิน</label>
+        <div id="banknumber" class="form-control">
+            {{item.BANK}}
+        </div>
+
+      </div>
+      <div class="form-group ">
+        <label for="price">จำนวนเงิน</label>
+        <div id="price" class="form-control">
+            {{item.PAY_PRICE}}
+        </div>
+      </div>
+      <div class="form-group ">
+        <label for="date">วันที่โอนเงิน</label>
+        <div id="date" class="form-control">
+            {{item.DATE}}
+        </div>
+
+      </div>
+      <div class="form-group ">
+        <label for="time">เวลาโอนเงินโดยประมาณ</label>
+        <div id="time" class="form-control">
+            {{item.TIME}}
+        </div>
+      </div>
+      <div class="form-group ">
+        <label for="file">รูปภาพ หรือ หลักฐานการโอนเงิน</label>
+        <img src={{item.PAY_IMG}} class="img-fluid" alt="Responsive image">
+      </div>
+      <div class="form-group ">
+        <label for="comment">หมายเหตุ</label>
+        <div id="comment" class="form-control my-text-view">
+            {{item.NOTE}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+</div>

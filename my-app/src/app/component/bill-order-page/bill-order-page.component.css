@@ -18,16 +18,12 @@
 }
 .title-product{
     font-size: 16px;
-    display: table-cell;
-    vertical-align: middle;
-}
-.date-product{
-    color:rgb(70, 155, 70);
-    font-size: 14px;
     font-style: italic;
     display: table-cell;
     vertical-align: middle;
+    color:rgb(70, 155, 70);
 }
+
 /* The container */
 .container-ckeck {
     display: block;

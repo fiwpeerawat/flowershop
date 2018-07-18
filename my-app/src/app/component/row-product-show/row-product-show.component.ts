@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+
 @Component({
   selector: 'app-row-product-show',
   templateUrl: './row-product-show.component.html',
@@ -7,12 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RowProductShowComponent implements OnInit {
 
-  @Input() namegroup:string;
+  @Input() productgroup:any;
   constructor() {}
 
-  ngOnInit() {
-    
+  ngOnInit() {    
   }
 
+ 
  
 }

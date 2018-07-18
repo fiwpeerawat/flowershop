@@ -12,7 +12,7 @@
 
                 <div>
                         <table class="table table-hover" style="margin: 0px; border-color: rgb(255, 255, 255); border-style: solid none none;">
-                                <thead>
+                                <thead >
 
                                         <tr style="height: 50px; background-color: rgb(250, 250, 250);">
                                                 <th scope="col" class="col-name col-first" style="width: 180px;  ">หมายเลขคำสั่งซื้อ</th>
@@ -22,39 +22,51 @@
                                                 <th scope="col" class="col-name" style="width: 120px;"></th>
                                         </tr>
                                 </thead>
+
+                                <tbody   *ngIf="list_order.length == 0 " >
+                                        <tr style="height: 80px;">
+                                                <td colspan="5" style="text-align: center;">
+                                                        ไม่มีรายการสินค้า
+                                                </td>
+                                        </tr>
+                                </tbody>
+
                                 <tbody *ngFor="let order of list_order; let i = index">
                                         <tr style="height: 80px;">
-                                                <td class="col-first">{{order.order_number}}</td>
-                                                <td>Otto</td>
+                                                <td class="col-first">
+                                                        {{order.ORDERNUMBER}}
+                                                </td>
+                                                <td>{{order.DATE}}</td>
                                                 <td style="text-align: center;">
                                                         <button type="button" class="btn btn-dropdown dropdown-toggle" (click)="dropdownClick(i)">
 
                                                         </button>
                                                 </td>
-                                                <td>@mdo</td>
+                                                <td>{{order.BillPRICE}}</td>
                                                 <td>
-                                                        <span class="mylink" routerLink="../Payment">แจ้งชำระเงิน</span>
+                                                        <span class="mylink" *ngIf="order.Approve == 0" (click)="notiPayment(i)">แจ้งชำระเงิน</span>
+                                                        <span class="mylink-2" *ngIf="order.Approve == 1" (click)="notiPaymentAf(i)"  >รออนุมัติ</span>
+                                                        <span class="mylink-3" *ngIf="order.Approve == 2" (click)="notiPaymentAf(i)"  >อนุมัติ</span>
                                                 </td>
                                         </tr>
 
-                                        <tr *ngFor="let item of order.list_item" class="row-img" id={{i}}{{item.id}}>
+                                        <tr *ngFor="let item of order.LIST" class="row-img" id=index{{i}}>
                                                 <td class="col-firstd" colspan="5" style="  vertical-align: middle; padding-right: 20px; ">
                                                         <div class="row">
                                                                 <div class="col" style="max-width: 110px;">
                                                                         <div class="myflex-card-img">
-                                                                                <img class="card-img" style="height:80px; width:80px;" src="https://static.giulianaflores.com.br/images/product/26099g.jpg">
+                                                                                <img class="card-img" style="height:80px; width:80px;" src={{item.URLPROFILE}}>
                                                                         </div>
                                                                 </div>
                                                                 <div class="col">
                                                                         <div style="display: table; height: 80px;">
                                                                                 <div class="title-product">
-                                                                                        {{item.test}}
+                                                                                        {{item.NAME}}
                                                                                 </div>
                                                                         </div>
                                                                 </div>
                                                         </div>
                                                 </td>
-
                                         </tr>
 
 

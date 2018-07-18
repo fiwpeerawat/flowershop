@@ -1,7 +1,10 @@
-import { Component, OnInit, Input,ViewChild ,ElementRef } from '@angular/core';
+import { Component, OnInit, Input,ViewChild ,ElementRef, Output , EventEmitter} from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import {  Http } from '@angular/http';
+import { map } from 'rxjs/operators';
+
 declare var jquery: any;
 declare var $: any;
 
@@ -18,15 +21,20 @@ export class LoginPageComponent implements OnInit {
   @ViewChild("modelerror", {read: ElementRef}) modelerror: ElementRef;
   @Input() title :string=null;  
   @ViewChild("rowlogin", {read: ElementRef}) rowlogin: ElementRef;
+  @ViewChild("loginText", {read: ElementRef}) loginText: ElementRef;
+  @ViewChild("loander", {read: ElementRef}) loander: ElementRef;
+  @ViewChild("btnLogin", {read: ElementRef}) btnLogin: ElementRef;
 
-  constructor(public fb: FormBuilder, public auth: AuthService, public router: Router) {
+  
+  
+  constructor(public fb: FormBuilder, public auth: AuthService, public router: Router , public http : Http) {
     auth.getCurrentLoggedIn();
   }
 
   ngOnInit() {
     $('span#email').css("visibility", "hidden");
     $('span#password').css("visibility", "hidden");
-    console.log(this.title)
+
     if(this.title == null){
         this.rowlogin.nativeElement.style.marginTop ="86px"
     }
@@ -78,18 +86,25 @@ export class LoginPageComponent implements OnInit {
   }
   login(): void {
     if (this.loginForm.get('email').status == 'VALID' && this.loginForm.get('password').status == 'VALID') {
+      this.loginText.nativeElement.style.display = "none";
+      this.btnLogin.nativeElement.disabled = true;
+      this.loander.nativeElement.style.display = "block";
       this.auth.emailLogin(this.loginForm.value.email, this.loginForm.value.password)
         .then((i) => {
           if(i)
-          this.modelerror.nativeElement.style.display='block';
+          this.loginText.nativeElement.style.display = "block";
+          this.loander.nativeElement.style.display = "none";
+          this.btnLogin.nativeElement.disabled = false;
+          this.modelerror.nativeElement.style.display='block';          
         })
     }
   }
   googleLogin(): void {
-    this.auth.googleLogin();
+    this.auth.googleLogin(  );
+
   }
   facebookLogin(): void {
-    this.auth.facebookLogin();
+    this.auth.facebookLogin(  );
   }
 
 }
